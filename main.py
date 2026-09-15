@@ -36,6 +36,9 @@ highest_score = np.max(runs)
 equal_to = runs == highest_score
 positions = np.where(runs == highest_score)
 match_averages = np.mean(runs, axis=0)
+shuffled_players = np.random.permutation(players)
+players_copy = players.copy()
+np.random.shuffle(players_copy)
 
 
 #print("Total: ", total_sum)
@@ -59,3 +62,7 @@ print(runs[runs == highest_score])
 print(np.where(runs == highest_score))
 print(players[positions[0]])
 print("Average score per match:", match_averages)
+print("Original:", players)
+print("Permutation:", shuffled_players)
+print("Original:", players)
+print("Shuffled copy:", players_copy)
